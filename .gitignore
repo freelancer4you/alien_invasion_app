@@ -1,0 +1,24 @@
+# Eclipse
+.project
+.classpath
+.settings
+
+# IntelliJ project files
+.idea
+*.iml
+
+# Maven
+target/
+
+# Logs (Lasttests)
+**/logs/
+*.log
+
+# SDK Man Environment-Configuration
+.sdkmanrc
+
+.dart_tool
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
