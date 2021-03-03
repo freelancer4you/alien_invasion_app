@@ -44,7 +44,7 @@ class _MovingMarkersPageState extends State<MovingMarkersPage> {
     print("target: " + finalPosition.toString());
 
     //float distance = startPosition.distanceTo(loc2);
-    final int start = clock.now().millisecond;
+    //final int start = clock.now().millisecond;
     // Verlängert man durationInMs wird die Geschwindigkeit geringer
     //final double durationInMs = 6000;
 
@@ -182,7 +182,7 @@ class _MovingMarkersPageState extends State<MovingMarkersPage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(title: Text('Home')),
+
       //drawer: buildDrawer(context, MovingMarkersPage.route),
       body: Padding(
         padding: EdgeInsets.all(8.0),
@@ -245,27 +245,6 @@ class _MovingMarkersPageState extends State<MovingMarkersPage> {
     );
     _markers.add(markerBenutzer);
 
-    // var tank = new Marker(
-    //   point: _tankPos,
-    //   width: 279.0,
-    //   height: 256.0,
-    //   builder: (context) => GestureDetector(
-    //     onTap: () {
-    //       // setState(() {
-    //       //   tankVisible = !tankVisible;
-    //       // });
-    //     },
-    //     child: Container(
-    //         alignment: Alignment.bottomCenter,
-    //         child: Image.asset(
-    //           'assets/images/ic_tank.png',
-    //           width: 49,
-    //           height: 65,
-    //         )
-    //     ),
-    //   ),
-    // );
-    // _markers.add(tank);
 
     List<Gebaeude> inderNaehBefindlicheGebaeude = benutzer.inderNaeheBefindlicheGebaeude;
     inderNaehBefindlicheGebaeude.forEach((element) {
@@ -385,30 +364,3 @@ class _MovingMarkersPageState extends State<MovingMarkersPage> {
     );
   }
 }
-
-// List<Marker> _markers = [
-//   Marker(
-//     width: 80.0,
-//     height: 80.0,
-//     point: LatLng(51.5, -0.09),
-//     builder: (ctx) => Container(
-//       child: FlutterLogo(),
-//     ),
-//   ),
-//   Marker(
-//     width: 80.0,
-//     height: 80.0,
-//     point: LatLng(53.3498, -6.2603),
-//     builder: (ctx) => Container(
-//       child: FlutterLogo(),
-//     ),
-//   ),
-//   Marker(
-//     width: 80.0,
-//     height: 80.0,
-//     point: LatLng(48.8566, 2.3522),
-//     builder: (ctx) => Container(
-//       child: FlutterLogo(),
-//     ),
-//   ),
-// ];

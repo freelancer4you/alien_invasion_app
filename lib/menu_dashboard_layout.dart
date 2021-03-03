@@ -208,30 +208,3 @@ class _MenuDashboardPageState extends State<MenuDashboardPage> with SingleTicker
     );
   }
 }
-
-List<Marker> _markers = [
-  Marker(
-    width: 80.0,
-    height: 80.0,
-    point: LatLng(51.5, -0.09),
-    builder: (ctx) => Container(
-      child: FlutterLogo(),
-    ),
-  ),
-  Marker(
-    width: 80.0,
-    height: 80.0,
-    point: LatLng(53.3498, -6.2603),
-    builder: (ctx) => Container(
-      child: FlutterLogo(),
-    ),
-  ),
-  Marker(
-    width: 80.0,
-    height: 80.0,
-    point: LatLng(48.8566, 2.3522),
-    builder: (ctx) => Container(
-      child: FlutterLogo(),
-    ),
-  ),
-];

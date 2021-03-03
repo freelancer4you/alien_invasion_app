@@ -32,23 +32,24 @@ class DevHttpOverrides extends HttpOverrides {
 //https://auth0.com/blog/get-started-with-flutter-authentication/
 Future<Benutzer> login(final String login) async {
   // Web geht aktuell nur ohne https
-   final response =
-   await http.get('http://192.168.2.116:8000/user/' + login);
+   //final response =
+  //await http.get('http://192.168.2.116:8000/user/' + login);
+
   //await http.get('https://192.168.2.116:8000/user/' + login);
   // HANDY
-  // final HttpClient client = new HttpClient();
-  // client.badCertificateCallback =((X509Certificate cert, String  host, int port) => true);
-  // final HttpClientRequest request = await client.getUrl(Uri.parse('https://192.168.2.116:8000/user/' + login));
-  // request.headers.set('Content-Type', 'application/json');
-  // final HttpClientResponse response = await request.close();
+   final HttpClient client = new HttpClient();
+   client.badCertificateCallback =((X509Certificate cert, String  host, int port) => true);
+   final HttpClientRequest request = await client.getUrl(Uri.parse('https://192.168.2.116:8000/user/' + login));
+   request.headers.set('Content-Type', 'application/json');
+   final HttpClientResponse response = await request.close();
 
   if (response.statusCode == 200) {
     // Handy
-    //return Benutzer.fromJson(jsonDecode(await response.transform(utf8.decoder).join()));
+    return Benutzer.fromJson(jsonDecode(await response.transform(utf8.decoder).join()));
     // WEB
-    final jsonresponse = jsonDecode(response.body);
+    //final jsonresponse = jsonDecode(response.body);
     //debugPrint('response: $jsonresponse');
-    return Benutzer.fromJson(jsonresponse);
+    //return Benutzer.fromJson(jsonresponse);
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
